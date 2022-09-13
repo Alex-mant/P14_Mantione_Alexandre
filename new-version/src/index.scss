@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+}
+
+#home {
+  width: 350px;
+  padding: 0 40%;
+  .home_mainTitle{
+    text-align: center;
+  }
+  a.home_navLink{
+    margin: 0 25%;
+  }
+  input, select{
+    width: 200px;
+    margin: 10px 5px;
+  }
+  select{
+    width: 208px;
+    height: 30px;
+  }
+  fieldSet{
+    margin: 20px 0;
+  }
+  .home_submit-btn{
+    margin: 20px 43%;
+  }
+  .Form{
+    width: fit-content;
+    margin: 0 auto;
+    .form_title{
+      text-align: center  ;
+    }
+    .formEmployee{
+      padding: 0 15px;
+      margin: 0 auto;
+      label{
+        margin: 0 5px;
+      }
+    }
+    .address{
+      input,select {
+        margin: 10px auto;
+      }
+      label{
+        padding: 0 30px;
+      }
+    }
+  }
+
+}
