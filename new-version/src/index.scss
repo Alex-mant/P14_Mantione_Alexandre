@@ -1,4 +1,8 @@
 body {
+  background-image: url("./assets/bkg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100vw;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -18,13 +22,24 @@ code {
 }
 
 #home {
-  width: 350px;
-  padding: 0 40%;
+  width: 550px;
+  margin: 0 auto;
+  height: 100vh;
   .home_mainTitle{
     text-align: center;
   }
   a.home_navLink{
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 120px;
+    right: -425px;
     margin: 0 25%;
+  }
+  a.home_navLink:hover{
+    text-shadow: 1.5px 1.5px 1.5px #fff;
   }
   input, select{
     width: 200px;
@@ -35,14 +50,42 @@ code {
     height: 30px;
   }
   fieldSet{
+    border: 1px solid #072e22;
     margin: 20px 0;
   }
   .home_submit-btn{
     margin: 20px 43%;
   }
+  .departmentOpt {
+    text-align: center;
+  }
   .Form{
-    width: fit-content;
-    margin: 0 auto;
+    color: #072e22;
+    box-shadow: 2px 1px 12px 2px #072e22;
+
+    background-color: #56a18a;
+    border-radius: 45px;
+    align-self: center;
+    width: 300px;
+    padding: 0 100px;
+    margin: 50px auto;
+    button{
+      cursor: pointer;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      border: 0px #072e22;
+      background-color: #366658;
+      margin: 25px auto;
+      border-radius: 5px;
+      width: 80px;
+      height: 30px;
+    }
+    button:hover{
+      background-color: #fff;
+      color: #366658;
+    }
     .form_title{
       text-align: center  ;
     }
@@ -50,17 +93,66 @@ code {
       padding: 0 15px;
       margin: 0 auto;
       label{
+        font-weight: 500;
         margin: 0 5px;
+      }
+      input,select{
+        border: 0px transparent;
+        border-radius: 5px;
+        height: 25px;
       }
     }
     .address{
+      legend{
+        font-weight: 600;
+        font-size: 18px;
+      }
       input,select {
+        border: 0px transparent;
+        border-radius: 5px;
+        height: 25px;
         margin: 10px auto;
       }
       label{
+        font-weight: 500;
         padding: 0 30px;
       }
     }
   }
-
+  
+}
+.home_websiteIdentity{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 55px;
+  top: 40px;
+  font-size: 18px;
+  img{
+    width: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: -15px;
+  }
+}
+#Modal{
+  display: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px 2px #072e22;
+  position: absolute;
+  color: #fff;
+  top: 40vh;
+  left: 42.16%;
+  background-color: #072e22;
+  width: 300px;
+  height: 200px;
+  .crossToClose{
+    cursor: pointer;
+    align-self: flex-start;
+    position: relative;
+    top: 0px;
+    right: -160px;
+  }
 }
