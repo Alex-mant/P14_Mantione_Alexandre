@@ -22,7 +22,7 @@ const FormToCreateEmployee = ({title}) => {
     const allInputs = [...e.target.querySelectorAll('input, select')];
     const currentEmployeeInfo = {};
     let allEmployeeInfoCopy = [...allEmployeeInfo];
-    allInputs.map((input) => createNewEmployeeEntries(input, currentEmployeeInfo));
+    allInputs.forEach((input) => createNewEmployeeEntries(input, currentEmployeeInfo));
     allEmployeeInfoCopy.push(currentEmployeeInfo);
     allEmployeeInfoCopy = allEmployeeInfoCopy.filter((obj) => isContainEmptyKey(obj));
     allEmployeeInfo.length === allEmployeeInfoCopy.length ? modalPop(msg.modal.failure) : modalPop(msg.modal.success, allInputs);
