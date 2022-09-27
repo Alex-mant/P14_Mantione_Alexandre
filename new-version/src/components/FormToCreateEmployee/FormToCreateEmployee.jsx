@@ -19,22 +19,14 @@ const FormToCreateEmployee = ({title}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const allInputs = Array.from(e.target.querySelectorAll('input, select'));
-    
+    const allInputs = [...e.target.querySelectorAll('input, select')];
     const currentEmployeeInfo = {};
-
     let allEmployeeInfoCopy = [...allEmployeeInfo];
-
     allInputs.map((input) => createNewEmployeeEntries(input, currentEmployeeInfo));
-
     allEmployeeInfoCopy.push(currentEmployeeInfo);
-
     allEmployeeInfoCopy = allEmployeeInfoCopy.filter((obj) => isContainEmptyKey(obj));
-
     allEmployeeInfo.length === allEmployeeInfoCopy.length ? modalPop(msg.modal.failure) : modalPop(msg.modal.success, allInputs);
-
     setAllEmployeeInfo(allEmployeeInfoCopy);
-    
     dispatch(getNewEmployee(allEmployeeInfoCopy))
   }
 

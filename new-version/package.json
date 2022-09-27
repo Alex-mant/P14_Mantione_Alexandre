@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@alexandre_m/custom-modal": "^1.0.8",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -21,8 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "serve -s build",
-    "tsc": "tsc --watch"
+    "serve": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "sass": "^1.54.9",
-    "typescript": "^4.8.3"
+    "sass": "^1.54.9"
   }
 }

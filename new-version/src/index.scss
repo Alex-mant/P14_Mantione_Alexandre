@@ -139,20 +139,4 @@ code {
 }
 #Modal{
   display: none;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px 2px #072e22;
-  position: absolute;
-  color: #fff;
-  top: 40vh;
-  left: 42.16%;
-  background-color: #072e22;
-  width: 300px;
-  height: 200px;
-  .crossToClose{
-    cursor: pointer;
-    align-self: flex-start;
-    position: relative;
-    top: 0px;
-    right: -160px;
-  }
 }
