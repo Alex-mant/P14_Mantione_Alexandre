@@ -4,7 +4,7 @@ import Fields from '../Fields/Fields';
 import FormEmployeeCreator from '../../data/FormEmployeeCreator'
 import DepartmentOptions from '../DepartmentOptions/DepartmentOptions';
 import { modalPop } from '../../utils/modalPop';
-import { createNewEmployeeEntries } from '../../utils/createNewEmployeeEntries';
+import { createNewObjectKey } from '../../utils/createNewObjectKey';
 import { useDispatch } from 'react-redux';
 import { getNewEmployee } from '../../redux/feature/employeeSlice';
 import { isContainEmptyKey } from '../../utils/isContainEmptyKey';
@@ -19,7 +19,7 @@ const FormToCreateEmployee = ({title}) => {
     e.preventDefault();
     const allInputs = [...form.current.querySelectorAll('input, select')];
     const currentEmployeeInfo = {};
-    allInputs.forEach((input) => createNewEmployeeEntries(input, currentEmployeeInfo));
+    allInputs.forEach((input) => createNewObjectKey(input, currentEmployeeInfo));
     if (isContainEmptyKey(currentEmployeeInfo)){
       modalPop('failure') 
     } else{
