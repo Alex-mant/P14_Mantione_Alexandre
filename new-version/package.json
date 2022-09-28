@@ -1,10 +1,10 @@
 {
   "name": "new-version",
   "homepage": "/",
-  "version": "0.1.0",
+  "version": "0.1.0", 
   "private": true,
   "dependencies": {
-    "@alexandre_m/custom-modal": "^1.0.8",
+    "@alexandre_m/custom-modal": "^1.0.9",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
