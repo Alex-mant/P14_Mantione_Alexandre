@@ -1,6 +1,5 @@
 body {
-  background-image: url("./assets/bkg.png");
-  background-size: cover;
+  background: linear-gradient(180deg, #fff 25%, #93ad18 25%);
   background-repeat: no-repeat;
   max-width: 100vw;
   margin: 0;
@@ -21,22 +20,23 @@ code {
   flex-direction: column;
 }
 
+a.home_navLink{
+  position: absolute;
+  left: 65%;
+  top: 23%;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #000;
+  font-size: 22px;
+  text-decoration: none;
+}
+
 #home {
   width: 550px;
   margin: 0 auto;
   height: 100vh;
   .home_mainTitle{
     text-align: center;
-  }
-  a.home_navLink{
-    cursor: pointer;
-    color: #fff;
-    font-size: 22px;
-    text-decoration: none;
-    position: absolute;
-    bottom: 120px;
-    right: -425px;
-    margin: 0 25%;
   }
   a.home_navLink:hover{
     text-shadow: 1.5px 1.5px 1.5px #fff;
@@ -62,8 +62,7 @@ code {
   .Form{
     color: #072e22;
     box-shadow: 2px 1px 12px 2px #072e22;
-
-    background-color: #56a18a;
+    background: linear-gradient(90deg, #fff -50%, #93ad19 50%, #fff 150%);
     border-radius: 45px;
     align-self: center;
     width: 300px;
@@ -76,7 +75,7 @@ code {
       font-weight: 600;
       letter-spacing: 2px;
       border: 0px #072e22;
-      background-color: #366658;
+      background-color: #5a6c0f;
       margin: 25px auto;
       border-radius: 5px;
       width: 80px;
@@ -122,7 +121,7 @@ code {
   
 }
 .home_websiteIdentity{
-  color: #fff;
+  color: #46550bc9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,4 +138,74 @@ code {
 }
 #Modal{
   display: none;
+}
+
+//rc-table
+
+table {
+  border: 1px solid #46550bc9;
+  width: 100%;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+
+th,
+td {
+  text-align: -internal-center;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid #46550bc9;
+  text-align: center;
+}
+
+.rc-table {
+  .rc-table-thead {
+    .rc-table-cell {
+      font-weight: normal;
+      background-color: #46550bc9;
+      color:#f5f5f5;
+    }
+  }
+
+  .rc-table-tbody {
+    .rc-table-row {
+      .rc-table-cell {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+
+//Animation class
+.rotate-center {
+	-webkit-animation: rotate-center 60s linear infinite both;
+  animation: rotate-center 60s linear infinite both;
+}
+.flip-vertical-right {
+	-webkit-animation: flip-vertical-right 2s linear infinite both;
+  animation: flip-vertical-right 2s linear infinite both;
+}
+
+// KeyFrames
+@keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
