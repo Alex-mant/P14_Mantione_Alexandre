@@ -5,7 +5,7 @@ import RCTable from '../components/RCTable/RCTable';
 const EmployeeList = () => {
   return (
     <div id='employeeList'>
-      <Nav pathname={"/home"} text={"Create a new employee"}/>
+      <Nav pathname={"/home"} text={"Create A New Employee"}/>
       <RCTable/>
     </div>
   );
