@@ -1,4 +1,4 @@
-const EmployeeCreatorForm = [
+export const FormEmployeeInfo = [
   {
     label: {
       for: "first-name",
@@ -19,13 +19,5 @@ const EmployeeCreatorForm = [
     },
     inputType: "text",
   },
-  {
-    label: {
-      for: "start-date",
-      text: "Start Date",
-    },
-    inputType: "text",
-  },
+  
 ];
-
-export default EmployeeCreatorForm;

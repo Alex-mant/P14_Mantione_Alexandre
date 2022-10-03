@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import Table from 'rc-table'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux';
+// eslint-disable-next-line no-unused-vars
 import { mockedData } from '../../data/mocked/TableMockedData';
-// import { mockedData } from '../../data/mocked/TableMockedData';
 
 const RCTable = () => {
   const columnsWidth = 'max-content'
