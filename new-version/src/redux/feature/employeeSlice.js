@@ -20,6 +20,7 @@ export const employeeSlice = createSlice({
   initialState: {
     currentInfo: currentInfoInit,
     List: [],
+    isSuccess: false,
   },
   reducers: {
     setFirstName: (state, action) => {
@@ -53,9 +54,11 @@ export const employeeSlice = createSlice({
     addNewEmployee: (state) => {
       if (!isContainEmptyKey(state.currentInfo)) {
         state.List.push(state.currentInfo);
+        state.isSuccess = true;
         modalPop("success");
         state.currentInfo = currentInfoInit;
       } else {
+        state.isSuccess = false;
         modalPop("failure");
       }
     },

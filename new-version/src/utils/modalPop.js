@@ -1,8 +1,9 @@
 import { msg } from "./messages";
 
-export const modalPop = (message, inputsToClear) => {
+export const modalPop = (message) => {
   const modal = document.querySelector("#Modal");
-  const modalText = modal.children[1];
+  const modalText = modal.querySelector('p');
+  modalText.classList.add(message === "success" ? "success" : "failure");
   modal.style.display = "flex";
 
   if (message === "success") {
