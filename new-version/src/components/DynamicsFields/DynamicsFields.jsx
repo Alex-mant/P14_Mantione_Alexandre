@@ -9,11 +9,12 @@ const DynamicsFields = () => {
   const array = step === 1 ? FormEmployeeInfo : step === 2 ? FormEmployeeAdress : FormEmployeeProInfo;
 
   return (
-    <div className="formEmployee flexColumn">
-      {array.map((field, index) => {
-        return <InputOrSelect key={index + new Date().getTime()} {...field} />;
-      })}
-    </div>
+    <fieldset className="formEmployee flexColumn">
+      <legend>{step === 1 ? 'Employee infos' : step === 2 ? 'Employee address' : 'Employee infos Pro'}</legend>
+        {array.map((field, index) => {
+          return <InputOrSelect key={index + new Date().getTime()} {...field} />;
+        })}
+    </fieldset>
   );
 };
 

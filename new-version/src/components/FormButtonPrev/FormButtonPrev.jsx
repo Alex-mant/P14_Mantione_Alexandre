@@ -5,7 +5,7 @@ import { setStep } from "../../redux/feature/formularySlice";
 const FormButtonPrev = () => {
   const dispatch = useDispatch();
   const step = useSelector((state) => state.formulary.step);
-
+  const isDisabled = step === 1 ? " home_submit-btn disabled" : "home_submit-btn";
   const handlePrev = (e) => {
     e.preventDefault();
     step > 1 ? dispatch(setStep(step - 1)) : dispatch(setStep(step));
@@ -15,9 +15,8 @@ const FormButtonPrev = () => {
     <button
       type="button"
       onClick={handlePrev}
-      className="home_submit-btn"
+      className={isDisabled}
       disabled={step === 1 ? true : false}
-      style={{ background: step === 1 ? "grey" : "green" }}
     >
       <i className="fas fa-arrow-left"></i>
     </button>

@@ -14,7 +14,7 @@ const FormButtonSubmit = () => {
 
   return (
     <button onClick={handleSubmit} type="submit" className="home_submit-btn">
-      Envoyer
+      <i className="fa-sharp fas fa-check"></i>
     </button>
   );
 };
