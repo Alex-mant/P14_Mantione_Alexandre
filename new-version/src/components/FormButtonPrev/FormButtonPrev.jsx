@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setStep } from "../../redux/feature/formularySlice";
+import arrowLeft from '../../assets/arrow-left.svg'
 
 const FormButtonPrev = () => {
   const dispatch = useDispatch();
@@ -14,11 +15,12 @@ const FormButtonPrev = () => {
   return (
     <button
       type="button"
+      aria-label="previous step"
       onClick={handlePrev}
       className={isDisabled}
       disabled={step === 1 ? true : false}
     >
-      <i className="fas fa-arrow-left"></i>
+      <img width={15} height={15} className="arrow-Btn" src={arrowLeft} alt="arrow-left" />
     </button>
   );
 };

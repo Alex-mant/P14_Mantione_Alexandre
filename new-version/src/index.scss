@@ -94,10 +94,13 @@ code {
         transform: scale(1.025);
       }
     }
+    .arrow-Btn{
+      margin-top: 2px;
+    }
     .disabled{
       background-color: grey;
       &:hover{
-        transform: scale(1);
+        transform: unset;
         background-color: grey;
       }
     }
