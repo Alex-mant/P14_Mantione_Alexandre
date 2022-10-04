@@ -1,29 +1,22 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addNewEmployee, getEmployeeProInfo, resetState } from '../../redux/feature/employeeSlice';
+import { useDispatch } from 'react-redux';
+import { addNewEmployee } from '../../redux/feature/employeeSlice';
 import { setStep } from '../../redux/feature/formularySlice';
+import { getInfoFromForm } from '../../utils/getInfoFromForm';
 
 const FormButtonSubmit = () => {
   const dispatch = useDispatch();
-  const step = useSelector(state => state.formulary.step)
 
   const handleSubmit = (e) =>  {
     const target = e.target.parentElement.parentElement;
     const inputs = [...target.querySelectorAll('input, select')];
-    const payload = {};
+
     e.preventDefault();
-    if(step === 3){
-      inputs.forEach((input) => payload[input.id] = input.value);
-      dispatch(getEmployeeProInfo(payload));
-    }
+    getInfoFromForm('submit', inputs, dispatch)
     dispatch(addNewEmployee())
-    dispatch(resetState());
     dispatch(setStep(1));
-    target.reset();
-    
   }
 
-  // NE PAS RESET QUAND MANQUE INFO //AFFICHER MODAL QUAND SUCCESS ! // REFACTO !
   return (
     <button
           onClick={handleSubmit}

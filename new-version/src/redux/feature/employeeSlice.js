@@ -21,24 +21,38 @@ export const employeeSlice = createSlice({
     List : []
   },
   reducers: {
-    getEmployeeInfo: (state, action) => {
-      state.currentInfo['first-name'] = action.payload['first-name'] ;
-      state.currentInfo['last-name'] = action.payload['last-name']
-      state.currentInfo['date-of-birth'] = action.payload['date-of-birth'];
+    setFirstName : (state, action) => {
+      state.currentInfo['first-name'] = action.payload
     },
-    getEmployeeAdress: (state, action) => {
-      state.currentInfo['street'] = action.payload['street'];
-      state.currentInfo['city'] = action.payload['city'];
-      state.currentInfo['state'] = action.payload['state'];
-      state.currentInfo['zip-code'] = action.payload['zip-code'];
+    setLastName : (state, action) => {
+      state.currentInfo['last-name'] = action.payload
     },
-    getEmployeeProInfo: (state, action) => {
-      state.currentInfo['start-date'] = action.payload['start-date'];
-      state.currentInfo['department'] = action.payload['department'];
+    setDateOfBirth : (state, action) => {
+      state.currentInfo['date-of-birth'] = action.payload
+    },
+    setStreet : (state, action) => {
+      state.currentInfo['street'] = action.payload
+    },
+    setCity : (state, action) => {
+      state.currentInfo['city'] = action.payload
+    },
+    setState : (state, action) => {
+      state.currentInfo['state'] = action.payload
+    },
+    setZipCode : (state, action) => {
+      state.currentInfo['zip-code'] = action.payload
+    },
+    setStartDate : (state, action) => {
+      state.currentInfo['start-date'] = action.payload
+    },
+    setDepartment : (state, action) => {
+      state.currentInfo['department'] = action.payload
     },
     addNewEmployee: (state) => {
       if(!isContainEmptyKey(state.currentInfo)){
         state.List.push(state.currentInfo);
+        modalPop("success");
+        state.currentInfo = currentInfoInit;
       }else{
         modalPop("failure")
       }
@@ -50,7 +64,7 @@ export const employeeSlice = createSlice({
 })
 
 export const {
-  addNewEmployee, getEmployeeInfo, getEmployeeAdress, getEmployeeProInfo, resetState
+  addNewEmployee, resetState, setCity, setDateOfBirth, setDepartment, setFirstName, setLastName, setStartDate, setState, setStreet, setZipCode
 } = employeeSlice.actions;
 
 export default employeeSlice.reducer;

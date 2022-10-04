@@ -7,7 +7,6 @@ export const modalPop = (message, inputsToClear) => {
 
   if(message === "success"){
     modalText.innerText = msg.modal.success
-    inputsToClear.current.reset();
   } else{
     modalText.innerText = msg.modal.failure
   }

@@ -1,4 +1,3 @@
-import { current } from "@reduxjs/toolkit";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -10,11 +9,11 @@ const InputOrSelect = (object) => {
     <>
       <label htmlFor={object.label.for}>{object.label.text}</label>
       {select ? (
-        <select name={select.name} id={select.name} value={currentInfo[select.name]}>
+        <select name={select.name} id={select.name} defaultValue={currentInfo[select.name]}>
           {select.options ? select.options.map((opt, index) => <option key={index}>{opt.name ? opt.name : ''}</option>) : <></>}
         </select>
       ) : (
-        <input type={object.inputType} id={object.label.for} value={currentInfo[object.label.for]}></input>
+        <input type={object.inputType} id={object.label.for} defaultValue={currentInfo[object.label.for]}></input>
       )}
     </>
   );
