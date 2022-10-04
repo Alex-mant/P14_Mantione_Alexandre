@@ -17,12 +17,12 @@ const RCTable = () => {
     rcTableCaseToUpperCase();
   }, []);
 
-  const data = useSelector((state) => state.employee.employeeList);
-  console.log(data);
+  const data = useSelector((state) => state.employee.List);
+  console.log(mockedData);
 
   return (
     <TableContainer>
-      <Table columns={columns} data={mockedData} />
+      <Table columns={columns} data={data} />
     </TableContainer>
   );
 };

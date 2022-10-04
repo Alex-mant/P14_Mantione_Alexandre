@@ -12,6 +12,7 @@ const currentInfoInit = {
   "zip-code": "",
   "start-date": "",
   department: "",
+  key:'',
 };
 
 export const employeeSlice = createSlice({
@@ -47,6 +48,7 @@ export const employeeSlice = createSlice({
     },
     setDepartment: (state, action) => {
       state.currentInfo["department"] = action.payload;
+      state.currentInfo.key = new Date().getTime();
     },
     addNewEmployee: (state) => {
       if (!isContainEmptyKey(state.currentInfo)) {
