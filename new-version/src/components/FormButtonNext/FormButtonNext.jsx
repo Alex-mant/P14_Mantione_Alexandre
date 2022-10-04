@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStep } from '../../redux/feature/formularySlice';
-import { getInfoFromForm } from '../../utils/getInfoFromForm';
 
 const FormButtonNext = () => {
   const dispatch = useDispatch();
@@ -9,9 +8,6 @@ const FormButtonNext = () => {
   
   const handleNext = (e) => {
     e.preventDefault();
-    const target = e.target.parentElement.parentElement
-    const inputs = [...target.querySelectorAll('input, select')];
-    getInfoFromForm('next', inputs, dispatch, step );
     step < 3 ? dispatch(setStep(step + 1)) : dispatch(setStep(step));
   } 
 

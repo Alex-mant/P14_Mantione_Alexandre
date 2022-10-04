@@ -1,6 +1,6 @@
 import { setCity, setDateOfBirth, setDepartment, setFirstName, setLastName, setStartDate, setState, setStreet, setZipCode } from "../redux/feature/employeeSlice"
 
-export const getInfoFromForm = (button, inputs, dispatch, step) => {
+export const getInfoFromForm = (inputs, dispatch, step) => {
 
   const getEmployeeInfoPart = () => {
     return inputs.forEach((input) => {
@@ -23,24 +23,15 @@ export const getInfoFromForm = (button, inputs, dispatch, step) => {
       if(input.id === 'department') dispatch(setDepartment(input.value))
     })
   }
-    
-  if(button === 'next'){
+
     if(step === 1){
       getEmployeeInfoPart();
     }
-    if(step === 2){
-      getEmployeeAdressPart();
-    }
-  }
-  if(button === 'prev'){
     if(step === 2){ 
       getEmployeeAdressPart();
     }
     if(step === 3){ 
       getEmployeeInfoProPart();
     }
-  }
-  if(button === 'submit'){
-    getEmployeeInfoProPart();
-  }
+
 }
