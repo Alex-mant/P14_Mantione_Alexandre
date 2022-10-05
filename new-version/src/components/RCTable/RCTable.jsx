@@ -6,24 +6,19 @@ import { mockedData } from "../../data/mocked/TableMockedData";
 import { rcTableCaseToUpperCase } from "../../utils/rcTableCaseToUpperCase";
 import { columns } from "../../data/rcTableColumns";
 
+
 const RCTable = () => {
-  const TableContainer = styled.div`
-    margin: 21.2% auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `;
   useEffect(() => {
     rcTableCaseToUpperCase();
   }, []);
 
   const data = useSelector((state) => state.employee.List);
-  console.log(mockedData);
+  console.log(data);
 
   return (
-    <TableContainer>
-      <Table columns={columns} data={data} />
-    </TableContainer>
+    <div className="table-container">
+      <Table columns={columns} data={mockedData} />
+    </div>
   );
 };
 
