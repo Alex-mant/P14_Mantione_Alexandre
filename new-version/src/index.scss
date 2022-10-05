@@ -61,7 +61,7 @@ code {
       margin: 5px
     }
     &:hover > span{
-      margin: 4px;
+      margin: 4px 8px 4px 4px;
       transition: .5s;
       display: inline-block;
     }
@@ -229,6 +229,7 @@ td {
 
 td {
   // border: 1px solid #46550bc9;
+  z-index: 1;
   background-color: #f9f9f9;
   text-align: center;
 }

@@ -62,6 +62,9 @@ export const employeeSlice = createSlice({
         modalPop("failure");
       }
     },
+    removeEmployee: (state, action) => {
+      state.List = action.payload;
+    },
     resetState: (state) => {
       state.currentInfo = currentInfoInit;
     },
@@ -70,6 +73,7 @@ export const employeeSlice = createSlice({
 
 export const {
   addNewEmployee,
+  removeEmployee,
   resetState,
   setCity,
   setDateOfBirth,

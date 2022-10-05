@@ -1,24 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import Table from "rc-table";
-import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { mockedData } from "../../data/mocked/TableMockedData";
-import { rcTableCaseToUpperCase } from "../../utils/rcTableCaseToUpperCase";
-import { columns } from "../../data/rcTableColumns";
 
+import { columns } from "../../data/rcTableColumns";
+import ToolsBtnSwitchToMockedData from "../utils/ToolsBtnSwitchToMockedData";
 
 const RCTable = () => {
-  useEffect(() => {
-    rcTableCaseToUpperCase();
-  }, []);
-
-  const data = useSelector((state) => state.employee.List);
-  console.log(data);
-
+  const [mocked, setMocked] = useState(false);
+  
+  const props = {
+    data : useSelector((state) => state.employee.List),
+    dispatch: useDispatch(),
+    mocked: mocked,
+  }
+   
   return (
+    <>
     <div className="table-container">
-      <Table columns={columns} data={mockedData} />
+      <Table columns={columns(props)} data={mocked ? mockedData : props.data} />
     </div>
+      <ToolsBtnSwitchToMockedData setMocked={setMocked} mocked={mocked}/>
+    </>
   );
 };
 

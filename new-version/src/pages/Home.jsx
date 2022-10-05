@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <div id="home">
-      <Nav pathname={"/employee-list"} img={user} text="View Employee"/>
+      <Nav pathname={"/employee-list"} img={user} text="View Employees"/>
       <FormToCreateEmployee title={formTitle} />
       <CustomModal id="Modal" success={isSuccess} icon={isSuccess ? check : failure}/>
     </div>

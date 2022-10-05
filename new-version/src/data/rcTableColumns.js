@@ -1,58 +1,66 @@
+import { handleDelete } from "../utils/handleDelete";
+
 const columnsWidth = "max-content";
 
-export const columns = [
+export const columns = (props) => [
   {
-    title: "first-name",
+    title: "First Name",
     dataIndex: "first-name",
     key: "first-name",
     width: columnsWidth,
   },
   {
-    title: "last-name",
+    title: "Last Name",
     dataIndex: "last-name",
     key: "last-name",
     width: columnsWidth,
   },
   {
-    title: "date-of-birth",
+    title: "Date Of Birth",
     dataIndex: "date-of-birth",
     key: "date-of-birth",
     width: columnsWidth,
   },
   {
-    title: "street",
+    title: "Street",
     dataIndex: "street",
     key: "street",
     width: columnsWidth,
   },
   {
-    title: "start-date",
+    title: "Start Date",
     dataIndex: "start-date",
     key: "start-date",
     width: columnsWidth,
   },
   {
-    title: "city",
+    title: "City",
     dataIndex: "city",
     key: "city",
     width: columnsWidth,
   },
   {
-    title: "state",
+    title: "State",
     dataIndex: "state",
     key: "state",
     width: columnsWidth,
   },
   {
-    title: "zip-code",
+    title: "Zip Code",
     dataIndex: "zip-code",
     key: "zip-code",
     width: columnsWidth,
   },
   {
-    title: "department",
+    title: "Department",
     dataIndex: "department",
     key: "department",
     width: columnsWidth,
   },
+  {
+    title: "Operations",
+    dataIndex: "key",
+    key: "operations",
+    render: (dataIndex) => <button onClick= {(e) => handleDelete(e, dataIndex, props)}>Delete</button>
+  }
 ];
