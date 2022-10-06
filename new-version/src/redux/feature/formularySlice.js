@@ -24,6 +24,8 @@ export const FormularySlice = createSlice({
     step: 1,
     state: "Select",
     department: "Select",
+    placeHolderBirthday: "MM/JJ/YYYY",
+    placeHolderStartDate: "MM/JJ/YYYY",
   },
   reducers: {
     setFirstName: (state, action) => {
@@ -82,10 +84,19 @@ export const FormularySlice = createSlice({
     setFormDepartment: (state, action) => {
       state.department = action.payload;
     },
+    setPlaceHolderBirthDay: (state, action) => {
+      state.placeHolderBirthday = action.payload
+    }
+    ,
+    setPlaceHolderStartDate: (state, action) => {
+      state.placeHolderStartDate = action.payload
+    }
   },
 });
 
 export const {
+  setPlaceHolderBirthDay,
+  setPlaceHolderStartDate,
   setStep,
   setFormState,
   setFormDepartment,
