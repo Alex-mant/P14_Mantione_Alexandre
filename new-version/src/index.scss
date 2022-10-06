@@ -35,72 +35,43 @@ code {
     display: flex;
     justify-content: center;
   }
-  a.home_navLink {
+  
+}
+
+a.home_navLink {
+  transition: .5s;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  position: relative;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: #556516;
+  border-radius: 50%;
+  margin: 0 auto 55px auto;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  color: #fff;
+  &:hover{
+    transition: .3s;
+    justify-content: initial;
+    border-radius: 10px;
+    width: max-content;
+  }
+  &:hover > img{
     transition: .5s;
-    display: flex;
-    flex-direction: row-reverse;
-    overflow: hidden;
-    position: relative;
-    top: 30px;
-    display: flex;
-    justify-content: center;
-    background-color: #556516;
-    border-radius: 50%;
-    margin: 0 auto 55px auto;
-    width: 30px;
-    height: 30px;
-    text-decoration: none;
-    color: #fff;
-    &:hover{
-      justify-content: initial;
-      transition: .5s;
-      border-radius: 10px;
-      width: 80px;
-    }
-    &:hover > img{
-      transition: .5s;
-      margin: 5px
-    }
-    &:hover > span{
-      margin: 4px 8px 4px 4px;
-      transition: .5s;
-      display: inline-block;
-    }
+    margin: 0 5px
+  }
+  &:hover > span{
+    transition: .5s;
+    margin: 4px 8px 4px 4px;
+    display: inline-block;
   }
 }
 
 #home {
-  a.home_navLink {
-    padding: 0 7px;
-    display: flex;
-    justify-content: space-between;
-    transition: 1s;
-    width: 120px;
-    position: absolute;
-    left: 50%;
-    text-align: center;
-    line-height: 40px;
-    transform: translate(151%,-50%);
-    top: 35%;
-    background: linear-gradient(90deg, #eeeeee  75%, #5a6c0f 75%);
-    margin: 0 auto;
-    cursor: pointer;
-    color: #000;
-    font-weight: 500;
-    font-size: 12px;
-    text-decoration: none;
-    border-radius: 0 15px 15px 0;
-    img{
-      width:20px;
-    }
-    span{
-      display: block;
-    }
-    &:hover{
-      transition: 1s;
-      transform: translate(225%, -50%);
-    }
-  }
   input,
   select {
     width: 200px;
@@ -121,7 +92,7 @@ code {
     flex-direction: column;
     color: #000;
     position: absolute;
-    top: 53%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
