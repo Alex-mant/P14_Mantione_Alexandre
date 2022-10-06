@@ -1,4 +1,4 @@
-import { removeEmployee } from "../redux/feature/employeeSlice";
+import { removeEmployee } from "../redux/feature/formularySlice";
 
 export const handleDelete = (e, key, {dispatch, data, mocked}) => {
   if(!mocked){

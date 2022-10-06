@@ -8,29 +8,37 @@ import {
   setState,
   setStreet,
   setZipCode,
-} from "../redux/feature/employeeSlice";
+} from "../redux/feature/formularySlice";
 
 export const getInfoFromForm = (inputs, dispatch, step) => {
   const getEmployeeInfoPart = () => {
-    return inputs.forEach((input) => {
-      if (input.id === "first-name") dispatch(setFirstName(input.value));
-      if (input.id === "last-name") dispatch(setLastName(input.value));
-      if (input.id === "date-of-birth") dispatch(setDateOfBirth(input.value));
-    });
+    if(Array.isArray(inputs)){
+      return inputs.forEach((input) => {
+        if (input.id === "first-name") dispatch(setFirstName(input.value));
+        if (input.id === "last-name") dispatch(setLastName(input.value));
+        if (input.id === "date-of-birth") dispatch(setDateOfBirth(input.value));
+      })
+    }
   };
   const getEmployeeAdressPart = () => {
-    return inputs.forEach((input) => {
-      if (input.id === "street") dispatch(setStreet(input.value));
-      if (input.id === "city") dispatch(setCity(input.value));
-      if (input.id === "state") dispatch(setState(input.value));
-      if (input.id === "zip-code") dispatch(setZipCode(input.value));
-    });
+    if(Array.isArray(inputs)){
+      return inputs.forEach((input) => {
+        if (input.id === "street") dispatch(setStreet(input.value));
+        if (input.id === "city") dispatch(setCity(input.value));
+        if (input.id === "zip-code") dispatch(setZipCode(input.value));
+      })
+    }else{
+      dispatch(setState(inputs.value));
+    }
   };
   const getEmployeeInfoProPart = () => {
-    return inputs.forEach((input) => {
-      if (input.id === "start-date") dispatch(setStartDate(input.value));
-      if (input.id === "department") dispatch(setDepartment(input.value));
-    });
+    if(Array.isArray(inputs)){
+      return inputs.forEach((input) => {
+        if (input.id === "start-date") dispatch(setStartDate(input.value));
+      })
+    }else{
+      dispatch(setDepartment(inputs.value));
+    }
   };
 
   if (step === 1) {

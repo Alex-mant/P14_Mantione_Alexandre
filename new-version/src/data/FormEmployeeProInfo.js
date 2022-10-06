@@ -15,22 +15,28 @@ export const FormEmployeeProInfo = [
       name: "department",
       options: [
         {
-          name: "Sales",
+          label: "Sales",
+          value: "Sales",
         },
         {
-          name: "Marketing",
+          label: "Marketing",
+          value: "Marketing",
         },
         {
-          name: "Engineering",
+          label: "Engineering",
+          value: "Engineering",
         },
         {
-          name: "Human",
+          label: "Human",
+          value: "Human",
         },
         {
-          name: "Resources",
+          label: "Resources",
+          value: "Resources",
         },
         {
-          name: "Legal",
+          label: "Legal",
+          value: "Legal",
         },
       ],
     },

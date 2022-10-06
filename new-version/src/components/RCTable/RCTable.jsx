@@ -10,7 +10,7 @@ const RCTable = () => {
   const [mocked, setMocked] = useState(false);
   
   const props = {
-    data : useSelector((state) => state.employee.List),
+    data : useSelector((state) => state.formulary.List),
     dispatch: useDispatch(),
     mocked: mocked,
   }

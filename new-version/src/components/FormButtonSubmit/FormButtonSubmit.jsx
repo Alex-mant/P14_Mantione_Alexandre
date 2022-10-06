@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addNewEmployee } from "../../redux/feature/employeeSlice";
+import { addNewEmployee } from "../../redux/feature/formularySlice";
 import { setStep } from "../../redux/feature/formularySlice";
 import check from '../../assets/check.svg'
 

@@ -9,7 +9,7 @@ import user from '../assets/viewEmployee.svg'
 
 const Home = () => {
   const formTitle = "Create Employee";
-  const isSuccess = useSelector(state => state.employee.isSuccess);
+  const isSuccess = useSelector(state => state.formulary.isSuccess);
 
   return (
     <div id="home">
