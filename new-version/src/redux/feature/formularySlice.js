@@ -20,6 +20,7 @@ export const FormularySlice = createSlice({
   initialState: {
     currentInfo: currentInfoInit,
     List: [],
+    filteredList: [],
     isSuccess: false,
     step: 1,
     state: "Select",
@@ -59,18 +60,29 @@ export const FormularySlice = createSlice({
     addNewEmployee: (state) => {
       if (!isContainEmptyKey(state.currentInfo)) {
         state.List.push(state.currentInfo);
+        state.filteredList.push(state.currentInfo);
         state.isSuccess = true;
         modalPop("success");
         state.currentInfo = currentInfoInit;
         state.state = "Select";
         state.department = "Select";
+        state.placeHolderBirthday = "MM/JJ/YYYY";
+        state.placeHolderStartDate = "MM/JJ/YYYY";
       } else {
         state.isSuccess = false;
         modalPop("failure");
       }
     },
+    addMockedEmployee: (state, action) => {
+      state.List.push(action.payload);
+      state.filteredList.push(action.payload);
+    },
+    setFilteredList: (state, action) => {
+      state.filteredList = action.payload;
+    },
     removeEmployee: (state, action) => {
       state.List = action.payload;
+      state.filteredList = action.payload;
     },
     resetState: (state) => {
       state.currentInfo = currentInfoInit;
@@ -85,16 +97,17 @@ export const FormularySlice = createSlice({
       state.department = action.payload;
     },
     setPlaceHolderBirthDay: (state, action) => {
-      state.placeHolderBirthday = action.payload
-    }
-    ,
+      state.placeHolderBirthday = action.payload;
+    },
     setPlaceHolderStartDate: (state, action) => {
-      state.placeHolderStartDate = action.payload
-    }
+      state.placeHolderStartDate = action.payload;
+    },
   },
 });
 
 export const {
+  addMockedEmployee,
+  setFilteredList,
   setPlaceHolderBirthDay,
   setPlaceHolderStartDate,
   setStep,
