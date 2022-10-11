@@ -4,7 +4,7 @@ import ToolsBtnSwitchToMockedData from "../utils/ToolsBtnSwitchToMockedData";
 import InputSearch from "../InputSearch/InputSearch";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import { columns2 } from "../../data/columnsTable";
+import { columns } from "../../data/columnsTable";
 import { handleCellContextMenu } from "../../utils/handleCellContextMenu";
 
 const SetPageSize = React.lazy(() => import("../SetPageSize/SetPageSize"))
@@ -15,7 +15,7 @@ const AgGridReact = React.lazy(() =>
   })
 );
 
-const RCTable = () => {
+const Table = () => {
   const defaultColDef = useMemo(
     () => ({
       sortable: true,
@@ -42,7 +42,7 @@ const RCTable = () => {
             <SetPageSize gridRef={gridRef} />
             <AgGridReact
               rowSelection="single"
-              onCellContextMenu={(e) => handleCellContextMenu(e,{dispatch, data})}
+              onCellClicked={(e) => handleCellContextMenu(e,{dispatch, data})}
               preventDefaultOnContextMenu
               suppressHorizontalScroll
               fullWidthCellRenderer={10}
@@ -52,7 +52,7 @@ const RCTable = () => {
               ref={gridRef}
               animateRows={true}
               rowData={filteredList}
-              columnDefs={columns2}
+              columnDefs={columns}
               defaultColDef={defaultColDef}
             />
           </Suspense>
@@ -64,4 +64,4 @@ const RCTable = () => {
   );
 };
 
-export default RCTable;
+export default Table;
