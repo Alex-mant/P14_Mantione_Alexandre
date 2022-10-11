@@ -15,7 +15,7 @@ const AgGridReact = React.lazy(() =>
   })
 );
 
-const Table = () => {
+const TablePlugin = () => {
   const defaultColDef = useMemo(
     () => ({
       sortable: true,
@@ -64,4 +64,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default TablePlugin;
