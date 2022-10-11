@@ -61,6 +61,6 @@ export const columns = (props) => [
     title: "Operations",
     dataIndex: "key",
     key: "operations",
-    render: (dataIndex) => <button onClick= {(e) => handleDelete(e, dataIndex, props)}>Delete</button>
+    render: (dataIndex) => <button onClick= {() => handleDelete(dataIndex, props)}>Delete</button>
   }
 ];

@@ -8,7 +8,8 @@ const ToolsBtnSwitchToMockedData = () => {
 
   return (
     <div>
-      <button style={{position: "absolute", left: "50%", transform: 'translate(-50%, 40%)'}} onClick={() => {dispatch(addMockedEmployee(randomEmployee()))}}>add mocked</button>
+      <button style={{position: "absolute", left: "50%", transform: 'translate(-50%, 40%)', background:'#546414',color:'#fff', border:"1px solid transparent", borderRadius:"15px", padding: "5px", cursor: 'pointer'}} 
+      onClick={() => {dispatch(addMockedEmployee(randomEmployee()))}}>Add mocked</button>
     </div>
   );
 }

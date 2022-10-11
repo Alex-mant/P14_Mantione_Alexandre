@@ -1,39 +1,59 @@
-//rc-table PLUGIN
+//Table PLUGIN
 
-table {
-  // border: 1px solid #46550bc9;
-  width: 100%;
-  margin: 0 auto;
-  table-layout: fixed;
-}
-
-th,
-td {
-  text-align: -internal-center;
-  padding: 10px;
-}
-
-td {
-  // border: 1px solid #46550bc9;
-  z-index: 1;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.rc-table {
-  .rc-table-thead {
-    .rc-table-cell {
-      font-weight: normal;
-      background-color: #46550bc9;
-      color: #f5f5f5;
+.ag-theme-alpine {
+  transform: scale(0.85)!important;
+  margin: -45px auto 0;
+  align-items: center!important;
+  justify-content: center!important;
+  .AgGrid-wrapper{
+    margin-bottom: 5px;
+    select#page-size{
+      border-radius: 15px;
+      color:#fff;
+      background-color: #546414;
     }
-  }
-  
-  .rc-table-tbody {
-    .rc-table-row {
-      .rc-table-cell {
-        font-size: 1em;
+    .AgGrid-header{
+      color:#fff;
+      font-weight: 500;
+      select{
+        margin-left: 5px;
       }
     }
+  }
+  .ag-header-row{
+    font-size: 18px;
+    background-color: #546414;
+    color: #fff!important;
+  }
+  .ag-root-wrapper{
+    border-radius: 15px;
+  }
+  .ag-paging-panel {
+    background-color: #546414;
+    color: #fff;
+    span:before{
+      color: #fff;
+    }
+  }
+  .ag-cell{
+    z-index: 0;
+    color: #000;
+    font-size: 18px;
+    background-color: #ffffff ;
+  }
+}
+
+.context-menu{
+  cursor: pointer;
+  position: absolute;
+  padding-top: 10px;
+  width: 200px;
+  height: 30px;
+  background-color: #546414;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  &:hover{
+    background-color: rgb(54, 55, 49);    
   }
 }
