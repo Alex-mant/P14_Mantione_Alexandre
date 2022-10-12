@@ -2,7 +2,7 @@ import { cancelMenu } from "./cancelMenu";
 import { handleDelete } from "./handleDelete";
 import trash from '../assets/trash.svg'
 
-export  const handleCellContextMenu = (e, {dispatch, data}) => {
+export  const handleCellContextMenu = (e, dispatch, data) => {
   cancelMenu();
   const rows = e.event.path[1].querySelectorAll('.ag-cell');  
   const menu = document.createElement('div');

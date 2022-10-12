@@ -47,7 +47,7 @@ const TablePlugin = () => {
             <TableTools gridRef={gridRef} />
             <AgGridReact
               rowSelection="single"
-              onCellClicked={(e) => handleCellContextMenu(e, { dispatch, data })}
+              onCellClicked={(e) => handleCellContextMenu(e, dispatch, data )}
               preventDefaultOnContextMenu
               suppressHorizontalScroll
               fullWidthCellRenderer={10}
