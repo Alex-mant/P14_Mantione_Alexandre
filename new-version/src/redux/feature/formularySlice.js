@@ -75,13 +75,14 @@ export const FormularySlice = createSlice({
     },
     addMockedEmployee: (state, action) => {
       state.List.push(action.payload);
+      state.filteredList.push(action.payload);
     },
     setFilteredList: (state, action) => {
-      state.filteredList = state.List;
       state.filteredList = action.payload;
     },
     removeEmployee: (state, action) => {
       state.List = action.payload;
+      state.filteredList = action.payload;
     },
     resetState: (state) => {
       state.currentInfo = currentInfoInit;
