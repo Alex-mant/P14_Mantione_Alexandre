@@ -1,15 +1,12 @@
 import React, { useCallback, useRef, Suspense, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ToolsBtnSwitchToMockedData from "../utils/ToolsBtnSwitchToMockedData";
-import InputSearch from "../InputSearch/InputSearch";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { columns } from "../../data/columnsTable";
 import { handleCellContextMenu } from "../../utils/handleCellContextMenu";
 import { useState } from "react";
-import TableTools from "../TableTools/TableTools";
 
-const SetPageSize = React.lazy(() => import("../SetPageSize/SetPageSize"));
+const TableTools = React.lazy(() => import("../TableTools/TableTools"));
 
 const AgGridReact = React.lazy(() =>
   import("ag-grid-react").then((module) => {

@@ -1,7 +1,7 @@
 //Table PLUGIN
 
 .ag-theme-alpine {
-  margin: 35px auto 0;
+  margin: -20px auto 0;
   align-items: center!important;
   justify-content: center!important;
   .AgGrid-wrapper{
@@ -70,15 +70,16 @@
     }
   }
   span{
+    font-size: 14px;
     visibility: hidden;
     position: relative;
-    bottom: 3px;
-    left: -7px;
+    bottom: 2px;
+    left: -20px;
   }
   img{
     position: relative;
-    left: -7px;
+    left: -13px;
     bottom: 5px;
-    width: 18px;
+    width: 14px;
   }
 }
