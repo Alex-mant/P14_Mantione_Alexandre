@@ -1,8 +1,7 @@
 //Table PLUGIN
 
 .ag-theme-alpine {
-  transform: scale(0.85)!important;
-  margin: -45px auto 0;
+  margin: 35px auto 0;
   align-items: center!important;
   justify-content: center!important;
   .AgGrid-wrapper{
@@ -13,6 +12,8 @@
       background-color: #546414;
     }
     .AgGrid-header{
+      position: relative;
+      top: 35px;
       color:#fff;
       font-weight: 500;
       select{
@@ -21,7 +22,7 @@
     }
   }
   .ag-header-row{
-    font-size: 18px;
+    font-size: 16px;
     background-color: #546414;
     color: #fff!important;
   }
@@ -38,7 +39,6 @@
   .ag-cell{
     z-index: 0;
     color: #000;
-    font-size: 18px;
     background-color: #ffffff ;
   }
 }

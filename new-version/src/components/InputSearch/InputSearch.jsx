@@ -5,27 +5,45 @@ import { filterEmployee } from '../../utils/filterEmployee';
 import styled from 'styled-components'; 
 
 const Input = styled.input`
-  border-radius: "15px";
-  margin: -35px 0 5px;
+  position: relative;
+  bottom: 10px;
+  border-radius: "15px"; 
   border-radius: 5px;
   border: .5px solid grey;
   height: 20px;
 `
+const Legend = styled.p`
+  font-size:11px;
+  font-style: italic;
+  font-weight: 500;
+`
+const Footnote = styled.span`
+  color: red;
+  font-size: 16px;
+`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
-const InputSearch = ({isMocked}) => {
+const InputSearch = () => {
   const data = useSelector((state) => state.formulary.List);
   const dispatch = useDispatch();
   const placeholder = 'Search an employee here';
 
-   
   const handleChange = (e) => {
     const inputValue = e.target.value;
-    dispatch(setFilteredList(data.filter((data) => filterEmployee(data, inputValue))));
-    if (inputValue === "") dispatch(setFilteredList(data));
+    inputValue === "" ? dispatch(setFilteredList(data)) : dispatch(setFilteredList(data.filter((data) => filterEmployee(data, inputValue))));
   };
 
   return (
-    <Input placeholder={placeholder} onChange={handleChange} />
+    <Container >
+      <Legend>
+        <Footnote>*</Footnote>
+        First-name, Last-name or Department
+      </Legend>
+      <Input placeholder={placeholder + "*"} onChange={handleChange} />
+    </Container>
   );
 }
 
