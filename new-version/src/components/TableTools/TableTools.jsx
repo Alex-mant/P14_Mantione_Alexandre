@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import InputSearch from '../InputSearch/InputSearch';
 import SetPageSize from '../SetPageSize/SetPageSize';
-import ToolsBtnSwitchToMockedData from '../utils/ToolsBtnSwitchToMockedData';
+import AddMockedData from '../utils/AddMockedData';
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const TableTools = ({gridRef}) => {
   return (
     <Container>
       <SetPageSize gridRef={gridRef}/>
-      <ToolsBtnSwitchToMockedData/>
+      <AddMockedData/>
       <InputSearch/>
     </Container>
   );
