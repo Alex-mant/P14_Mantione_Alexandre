@@ -4,6 +4,10 @@
   margin: -20px auto 0;
   align-items: center!important;
   justify-content: center!important;
+  .ag-overlay-wrapper{
+    position: relative;
+    top: 23px!important;
+  }
   .AgGrid-wrapper{
     margin-bottom: 5px;
     select#page-size{
