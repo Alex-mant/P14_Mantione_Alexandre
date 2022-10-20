@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <HRnetLogo/>
+        <HRnetLogo />
         <Router>
           <Routes>
-            <Route exact path="/home" element={<Home/>}/>
-            <Route path="/employee-list" element={<EmployeeList/>}/>
+            <Route exact path="/home" element={<Home />} />
+            <Route path="/employee-list" element={<EmployeeList />} />
           </Routes>
         </Router>
       </Provider>

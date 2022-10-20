@@ -1,6 +1,6 @@
 export const msg = {
-  modal : {
+  modal: {
     success: "The employee has been successfully registered !",
-    failure: "Please complete all fields !"
-  }
-}
+    failure: "Please complete all fields !",
+  },
+};

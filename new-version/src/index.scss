@@ -1,149 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Limelight&family=Lobster&family=Roboto+Serif:opsz@8..144&display=swap");
+
 body {
-  background: linear-gradient(180deg, #fff 25%, #93ad18 25%);
-  background-repeat: no-repeat;
-  max-width: 100vw;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.flexColumn{
-  display: flex;
-  flex-direction: column;
+.flexColumn {
+  display: grid;
+  grid-template-columns: 2fr;
+  align-items: center;
+  grid-template-areas: "label input";
 }
 
-a.home_navLink{
-  position: absolute;
-  left: 65%;
-  top: 23%;
-  margin: 0 auto;
-  cursor: pointer;
-  color: #000;
-  font-size: 22px;
-  text-decoration: none;
+#home, #employeeList{
+  background: linear-gradient(180deg, #768e12 0%, rgba(118, 142, 18, 0) 93.75%);
+  width: 100%;
+  height: 85vh;
+}
+
+
+.dNone{
+  display: none;
+}
+
+#employeeList{
+  .table-container{
+    display: flex;
+    justify-content: center;
+  }
+  a.home_navLink {
+    transition: .5s;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    position: relative;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #556516;
+    border-radius: 50%;
+    margin: 0 auto 55px auto;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    color: #fff;
+    &:hover{
+      justify-content: initial;
+      transition: .5s;
+      border-radius: 10px;
+      width: 80px;
+    }
+    &:hover > img{
+      transition: .5s;
+      margin: 5px
+    }
+    &:hover > span{
+      margin: 4px 8px 4px 4px;
+      transition: .5s;
+      display: inline-block;
+    }
+  }
 }
 
 #home {
-  width: 550px;
-  margin: 0 auto;
-  height: 100vh;
-  .home_mainTitle{
+  a.home_navLink {
+    padding: 0 7px;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+    width: 120px;
+    position: absolute;
+    left: 50%;
     text-align: center;
+    line-height: 40px;
+    transform: translate(151%,-50%);
+    top: 35%;
+    background: linear-gradient(90deg, #eeeeee  75%, #5a6c0f 75%);
+    margin: 0 auto;
+    cursor: pointer;
+    color: #000;
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 0 15px 15px 0;
+    img{
+      width:20px;
+    }
+    span{
+      display: block;
+    }
+    &:hover{
+      transition: 1s;
+      transform: translate(225%, -50%);
+    }
   }
-  a.home_navLink:hover{
-    text-shadow: 1.5px 1.5px 1.5px #fff;
-  }
-  input, select{
+  input,
+  select {
     width: 200px;
     margin: 10px 5px;
   }
-  select{
+  select {
     width: 208px;
     height: 30px;
   }
-  fieldSet{
-    border: 1px solid #072e22;
-    margin: 20px 0;
-  }
-  .home_submit-btn{
-    margin: 20px 43%;
+  fieldSet {
+    border: 1px solid #000;
   }
   .departmentOpt {
     text-align: center;
   }
-  .Form{
-    color: #072e22;
-    box-shadow: 2px 1px 12px 2px #072e22;
-    background: linear-gradient(90deg, #fff -50%, #93ad19 50%, #fff 150%);
-    border-radius: 45px;
-    align-self: center;
-    width: 300px;
-    padding: 0 100px;
-    margin: 50px auto;
-    button{
+  .Form {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background: #eeeeee;
+    border: 1px solid #a6a6a6;
+    border-radius: 32px;
+    box-shadow: (0px 4px 33px rgba(0, 0, 0, 0.25));
+    width: 607px;
+    height: 457px;
+    .form-menu {
+      width: 100%;
+      position: absolute;
+      bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
       cursor: pointer;
       color: #fff;
       font-size: 14px;
       font-weight: 600;
       letter-spacing: 2px;
-      border: 0px #072e22;
+      border: 0px #5a6c0f;
       background-color: #5a6c0f;
       margin: 25px auto;
       border-radius: 5px;
-      width: 80px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      &:hover {
+        background-color: #5a6c0fb1;
+        transition-duration: 0.5s;
+        transform: scale(1.025);
+      }
     }
-    button:hover{
-      background-color: #fff;
-      color: #366658;
+    .arrow-Btn{
+      margin-top: 2px;
     }
-    .form_title{
-      text-align: center  ;
+    .disabled{
+      background-color: grey;
+      &:hover{
+        transform: unset;
+        background-color: grey;
+      }
     }
-    .formEmployee{
-      padding: 0 15px;
-      margin: 0 auto;
-      label{
+    .form_title {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .formEmployee {
+      padding: 45px 90px;
+      border-radius: 16px;
+      label {
         font-weight: 500;
         margin: 0 5px;
       }
-      input,select{
-        border: 0px transparent;
+      input,
+      select {
+        border: 0.5px #000 solid;
         border-radius: 5px;
         height: 25px;
       }
+      select{
+        width: 206px;
+        height: 29px;
+      }
     }
-    .address{
-      legend{
+    .address {
+      legend {
         font-weight: 600;
         font-size: 18px;
       }
-      input,select {
+      input,
+      select {
         border: 0px transparent;
         border-radius: 5px;
         height: 25px;
         margin: 10px auto;
       }
-      label{
+      label {
         font-weight: 500;
         padding: 0 30px;
       }
     }
   }
-  
 }
-.home_websiteIdentity{
-  color: #46550bc9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  left: 55px;
-  top: 40px;
-  font-size: 18px;
-  img{
-    width: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: -15px;
-  }
-}
-#Modal{
+
+#Modal {
   display: none;
 }
 
 //rc-table
 
 table {
-  border: 1px solid #46550bc9;
+  // border: 1px solid #46550bc9;
   width: 100%;
   margin: 0 auto;
   table-layout: fixed;
@@ -156,7 +229,9 @@ td {
 }
 
 td {
-  border: 1px solid #46550bc9;
+  // border: 1px solid #46550bc9;
+  z-index: 1;
+  background-color: #f9f9f9;
   text-align: center;
 }
 
@@ -165,10 +240,10 @@ td {
     .rc-table-cell {
       font-weight: normal;
       background-color: #46550bc9;
-      color:#f5f5f5;
+      color: #f5f5f5;
     }
   }
-
+  
   .rc-table-tbody {
     .rc-table-row {
       .rc-table-cell {
@@ -178,14 +253,56 @@ td {
   }
 }
 
+#select{
+  width: 205px;
+  height: 29px;
+  margin: 15px 5px;
+  .react-select__control{
+    border: 1px solid #000;
+    box-shadow: none;
+    min-height: unset;
+    height: 29px;
+  }
+  input{
+    position: relative;
+    top: 7px;
+    left: 1px;
+  }
+  .react-select__control--is-focused {
+    box-shadow: 0px 0px 0px 1px #000;
+  }
+  .react-select__indicator{
+    position: absolute;
+    right: 0;
+  }
+  .reat-select__menu{
+    top: 5px;
+    display: block;
+  }
+  .react-select__value-container, .react-select__input-container{
+    height: 29px;
+    margin: -5px 0 0;
+    padding: 0;
+  }
+  .react-select__option--is-selected{
+    background-color: grey;
+  }
+  .react-select__option:hover{
+    background-color: #5a6c0f ;
+    color: #fff;
+  }
+  .css-tj5bde-Svg{
+    fill:rgba(0, 0, 0, 0.593);
+  }
+}
 
 //Animation class
 .rotate-center {
-	-webkit-animation: rotate-center 60s linear infinite both;
+  -webkit-animation: rotate-center 60s linear infinite both;
   animation: rotate-center 60s linear infinite both;
 }
 .flip-vertical-right {
-	-webkit-animation: flip-vertical-right 2s linear infinite both;
+  -webkit-animation: flip-vertical-right 2s linear infinite both;
   animation: flip-vertical-right 2s linear infinite both;
 }
 
@@ -193,11 +310,11 @@ td {
 @keyframes flip-vertical-right {
   0% {
     -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
   }
   100% {
     -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transform: rotateY(180deg);
   }
 }
 
