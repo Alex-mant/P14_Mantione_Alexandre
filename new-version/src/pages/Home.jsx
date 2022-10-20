@@ -1,5 +1,5 @@
 import React from "react";
-import  {CustomModal} from "@alexandre_m/custom-modal";
+import  {CustomModal} from "@alexandre_m/react-modal";
 import FormToCreateEmployee from "../components/FormToCreateEmployee/FormToCreateEmployee";
 import { useSelector } from "react-redux";
 import check from '../assets/check.svg'
