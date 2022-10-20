@@ -3,6 +3,7 @@ export const FormEmployeeInfo = [
     label: {
       for: "first-name",
       text: "First Name",
+      inputType: "text",
     },
   },
   {
@@ -16,7 +17,7 @@ export const FormEmployeeInfo = [
     label: {
       for: "date-of-birth",
       text: "Date of Birth",
-    },
-    inputType: "text",
+    }, 
+    inputType: "date",
   },
 ];

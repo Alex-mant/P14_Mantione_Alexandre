@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Limelight&family=Lobster&family=Roboto+Serif:opsz@8..144&display=swap");
+@import "./components/DatePickerPlugin/mydatepicker.scss";
+@import "./styles/animations.scss";
+@import "./components/SelectPlugin/selectPlugin.scss";
+@import "./components/RCTable/rcTable.scss";
 
 body {
   margin: 0;
@@ -20,6 +24,9 @@ code {
 }
 
 #home, #employeeList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: linear-gradient(180deg, #768e12 0%, rgba(118, 142, 18, 0) 93.75%);
   width: 100%;
   height: 85vh;
@@ -30,77 +37,40 @@ code {
   display: none;
 }
 
-#employeeList{
-  .table-container{
-    display: flex;
-    justify-content: center;
+a.navLink {
+  transition: .5s;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  position: relative;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: #556516;
+  border-radius: 50%;
+  margin: 0 auto 55px auto;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  color: #fff;
+  &:hover{
+    transition: .3s;
+    justify-content: initial;
+    border-radius: 10px;
+    width: max-content;
   }
-  a.home_navLink {
+  &:hover > img{
     transition: .5s;
-    display: flex;
-    flex-direction: row-reverse;
-    overflow: hidden;
-    position: relative;
-    top: 30px;
-    display: flex;
-    justify-content: center;
-    background-color: #556516;
-    border-radius: 50%;
-    margin: 0 auto 55px auto;
-    width: 30px;
-    height: 30px;
-    text-decoration: none;
-    color: #fff;
-    &:hover{
-      justify-content: initial;
-      transition: .5s;
-      border-radius: 10px;
-      width: 80px;
-    }
-    &:hover > img{
-      transition: .5s;
-      margin: 5px
-    }
-    &:hover > span{
-      margin: 4px 8px 4px 4px;
-      transition: .5s;
-      display: inline-block;
-    }
+    margin: 0 5px
+  }
+  &:hover > span{
+    transition: .5s;
+    margin: 4px 8px 4px 4px;
+    display: inline-block;
   }
 }
 
 #home {
-  a.home_navLink {
-    padding: 0 7px;
-    display: flex;
-    justify-content: space-between;
-    transition: 1s;
-    width: 120px;
-    position: absolute;
-    left: 50%;
-    text-align: center;
-    line-height: 40px;
-    transform: translate(151%,-50%);
-    top: 35%;
-    background: linear-gradient(90deg, #eeeeee  75%, #5a6c0f 75%);
-    margin: 0 auto;
-    cursor: pointer;
-    color: #000;
-    font-weight: 500;
-    font-size: 12px;
-    text-decoration: none;
-    border-radius: 0 15px 15px 0;
-    img{
-      width:20px;
-    }
-    span{
-      display: block;
-    }
-    &:hover{
-      transition: 1s;
-      transform: translate(225%, -50%);
-    }
-  }
   input,
   select {
     width: 200px;
@@ -121,7 +91,7 @@ code {
     flex-direction: column;
     color: #000;
     position: absolute;
-    top: 53%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
@@ -137,24 +107,24 @@ code {
       bottom: 10px;
       display: flex;
       justify-content: space-between;
-    }
-    button {
-      cursor: pointer;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      border: 0px #5a6c0f;
-      background-color: #5a6c0f;
-      margin: 25px auto;
-      border-radius: 5px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      &:hover {
-        background-color: #5a6c0fb1;
-        transition-duration: 0.5s;
-        transform: scale(1.025);
+      button {
+        cursor: pointer;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        border: 0px #5a6c0f;
+        background-color: #5a6c0f;
+        margin: 25px auto;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        &:hover {
+          background-color: #5a6c0fb1;
+          transition-duration: 0.5s;
+          transform: scale(1.025);
+        }
       }
     }
     .arrow-Btn{
@@ -172,7 +142,7 @@ code {
       margin-bottom: 10px;
     }
     .formEmployee {
-      padding: 45px 90px;
+      padding: 35px 90px;
       border-radius: 16px;
       label {
         font-weight: 500;
@@ -183,10 +153,6 @@ code {
         border: 0.5px #000 solid;
         border-radius: 5px;
         height: 25px;
-      }
-      select{
-        width: 206px;
-        height: 29px;
       }
     }
     .address {
@@ -211,118 +177,4 @@ code {
 
 #Modal {
   display: none;
-}
-
-//rc-table
-
-table {
-  // border: 1px solid #46550bc9;
-  width: 100%;
-  margin: 0 auto;
-  table-layout: fixed;
-}
-
-th,
-td {
-  text-align: -internal-center;
-  padding: 10px;
-}
-
-td {
-  // border: 1px solid #46550bc9;
-  z-index: 1;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.rc-table {
-  .rc-table-thead {
-    .rc-table-cell {
-      font-weight: normal;
-      background-color: #46550bc9;
-      color: #f5f5f5;
-    }
-  }
-  
-  .rc-table-tbody {
-    .rc-table-row {
-      .rc-table-cell {
-        font-size: 1em;
-      }
-    }
-  }
-}
-
-#select{
-  width: 205px;
-  height: 29px;
-  margin: 15px 5px;
-  .react-select__control{
-    border: 1px solid #000;
-    box-shadow: none;
-    min-height: unset;
-    height: 29px;
-  }
-  input{
-    position: relative;
-    top: 7px;
-    left: 1px;
-  }
-  .react-select__control--is-focused {
-    box-shadow: 0px 0px 0px 1px #000;
-  }
-  .react-select__indicator{
-    position: absolute;
-    right: 0;
-  }
-  .reat-select__menu{
-    top: 5px;
-    display: block;
-  }
-  .react-select__value-container, .react-select__input-container{
-    height: 29px;
-    margin: -5px 0 0;
-    padding: 0;
-  }
-  .react-select__option--is-selected{
-    background-color: grey;
-  }
-  .react-select__option:hover{
-    background-color: #5a6c0f ;
-    color: #fff;
-  }
-  .css-tj5bde-Svg{
-    fill:rgba(0, 0, 0, 0.593);
-  }
-}
-
-//Animation class
-.rotate-center {
-  -webkit-animation: rotate-center 60s linear infinite both;
-  animation: rotate-center 60s linear infinite both;
-}
-.flip-vertical-right {
-  -webkit-animation: flip-vertical-right 2s linear infinite both;
-  animation: flip-vertical-right 2s linear infinite both;
-}
-
-// KeyFrames
-@keyframes flip-vertical-right {
-  0% {
-    -webkit-transform: rotateY(0);
-    transform: rotateY(0);
-  }
-  100% {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-  }
-}
-
-@keyframes rotate-center {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

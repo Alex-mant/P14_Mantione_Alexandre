@@ -4,7 +4,7 @@ export const FormEmployeeProInfo = [
       for: "start-date",
       text: "Start Date",
     },
-    inputType: "text",
+    inputType: "date",
   },
   {
     label: {

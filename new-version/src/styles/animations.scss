@@ -1,0 +1,30 @@
+//Animation class
+.rotate-center {
+  -webkit-animation: rotate-center 60s linear infinite both;
+  animation: rotate-center 60s linear infinite both;
+}
+.flip-vertical-right {
+  -webkit-animation: flip-vertical-right 2s linear infinite both;
+  animation: flip-vertical-right 2s linear infinite both;
+}
+
+// KeyFrames
+@keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
