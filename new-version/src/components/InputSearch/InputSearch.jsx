@@ -5,8 +5,11 @@ import { filterEmployee } from '../../utils/filterEmployee';
 import styled from 'styled-components'; 
 
 const Input = styled.input`
+  align-self: end;
   position: relative;
   bottom: 10px;
+  max-width: 250px;
+  min-width: 82px;
   border-radius: "15px"; 
   border-radius: 5px;
   border: .5px solid grey;

@@ -16,14 +16,14 @@ const TablePlugin = () => {
     () => ({
       resizable: false,
       sortable: true,
-      width: colWidth,
+      width: colWidth
     }),
     []
   );
 
   const [numberOfRows, setNumberOfRows] = useState();
   const dispatch = useDispatch();
-  const containerStyle = useMemo(() => ({ width: containerWidth, height: numberOfRows, maxHeight: 520, minHeight: 147 }), [numberOfRows]);
+  const containerStyle = useMemo(() => ({ maxWidth: containerWidth, width:'100%', height: numberOfRows, maxHeight: 520, minHeight: 147 }), [numberOfRows]);
   const gridStyle = useMemo(() => ({ height: "100%", width: "100%" }), []);
   const gridRef = useRef();
   const data = useSelector((state) => state.formulary.List);
