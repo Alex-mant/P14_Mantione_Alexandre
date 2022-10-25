@@ -10,6 +10,10 @@ const InputOrSelect = (object) => {
   const select = object.select;
   const currentInfo = useSelector((state) => state.formulary.currentInfo);
   
+  /**
+   * When the user changes the value of an input, get the values of all the inputs in the form, and
+   * dispatch them to the reducer.
+   */
   const handleChange = (e) => {
     const target = e.target.parentElement.parentElement;
     const inputs = [...target.querySelectorAll("input")];

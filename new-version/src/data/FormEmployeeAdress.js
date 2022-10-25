@@ -1,3 +1,4 @@
+/* A JavaScript object to define input/select. */
 export const FormEmployeeAdress = [
   {
     label: {

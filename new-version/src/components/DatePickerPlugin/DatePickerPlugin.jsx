@@ -19,6 +19,10 @@ const DatePickerPlugin = ({id}) => {
     dropdownMode: 'select'
   }
 
+  /**
+   * When the date is changed, set the start date to the date selected, then convert the date to a
+   * string and set the date of birth or start date to the date selected.
+   */
   const handleChange = (date) => {
     setStartDate(date);
     const dateFromForm = new Date(date).toLocaleDateString(dPicker.localString);

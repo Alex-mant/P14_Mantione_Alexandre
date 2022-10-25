@@ -11,6 +11,13 @@ import {
 } from "../redux/feature/formularySlice";
 
 export const getInfoFromForm = (inputs, dispatch, step) => {
+  
+  /**
+   * If the inputs array is an array, then for each input in the array, if the input's id is equal to
+   * "first-name or last-name or date-of-birth", then dispatch the setter action with the input's value, for an example : if the input's id is
+   * equal to "last-name", then dispatch the setLastName action with the input's value.
+   * @returns Nothing.
+   */
   const getEmployeeInfoPart = () => {
     if(Array.isArray(inputs)){
       return inputs.forEach((input) => {
@@ -20,6 +27,12 @@ export const getInfoFromForm = (inputs, dispatch, step) => {
       })
     }
   };
+
+  /**
+   * It takes an array of inputs and returns a function that dispatches the value of each input to the
+   * reducer.
+   * @returns Nothing.
+   */
   const getEmployeeAdressPart = () => {
     if(Array.isArray(inputs)){
       return inputs.forEach((input) => {
@@ -31,6 +44,13 @@ export const getInfoFromForm = (inputs, dispatch, step) => {
       dispatch(setState(inputs.value));
     }
   };
+
+  /**
+   * If the inputs are an array, then loop through the array and dispatch the setStartDate action with
+   * the value of the input. If the inputs are not an array, then dispatch the setDepartment action
+   * with the value of the input.
+   * @returns Nothing.
+   */
   const getEmployeeInfoProPart = () => {
     if(Array.isArray(inputs)){
       return inputs.forEach((input) => {
@@ -41,6 +61,7 @@ export const getInfoFromForm = (inputs, dispatch, step) => {
     }
   };
 
+  /* A function that is called in the component. It is used to dispatch the action to the reducer. */
   if (step === 1) {
     getEmployeeInfoPart();
   }

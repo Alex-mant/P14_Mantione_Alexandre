@@ -1,3 +1,4 @@
+/*  Creating an array of input with their types. */
 export const FormEmployeeProInfo = [
   {
     label: {

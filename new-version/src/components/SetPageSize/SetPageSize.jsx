@@ -1,6 +1,8 @@
 import React, { useCallback } from "react";
 
 const SetPageSize = ({ gridRef }) => {
+
+  /* When the page size is changed, the pagination is re-edited. . */
   const onPageSizeChanged = useCallback(() => {
     var value = document.getElementById("page-size").value;
     gridRef.current.api.paginationSetPageSize(Number(value));

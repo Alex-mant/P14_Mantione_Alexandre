@@ -12,6 +12,7 @@ const colWidth = 150;
 const containerWidth = colWidth * 9;
 
 const TablePlugin = () => {
+ /* A memoized function that returns an object. */
   const defaultColDef = useMemo(
     () => ({
       resizable: false,
@@ -29,6 +30,7 @@ const TablePlugin = () => {
   const data = useSelector((state) => state.formulary.List);
   const filteredList = useSelector((state) => state.formulary.filteredList);
 
+  /* A function that is called when the pagination changes. It is used to set the height of the table. */
   const paginationNumberFormatter = useCallback((params) => {
     setNumberOfRows(params.value* 44 + 98);
     return "[" + params.value.toLocaleString() + "]";

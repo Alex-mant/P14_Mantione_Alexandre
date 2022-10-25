@@ -2,6 +2,13 @@ import { cancelMenu } from "./cancelMenu";
 import { handleDelete } from "./handleDelete";
 import trash from '../assets/trash.svg'
 
+/**
+ * It creates a context menu, adds an event listener to it, and adds an event listener to each row in
+ * the table.
+ * @param e - the event object
+ * @param dispatch - the dispatch function from redux
+ * @param data - is the data that is being passed to the grid
+ */
 export  const handleCellContextMenu = (e, dispatch, data) => {
   cancelMenu();
   const rows = e.event.path[1].querySelectorAll('.ag-cell');  

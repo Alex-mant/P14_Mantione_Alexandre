@@ -13,9 +13,13 @@ const SelectPlugin = ({object}) => {
   const currentUserState = useSelector((state) => state.formulary.state);
   const currentUserDepartment =  useSelector((state) => state.formulary.department);
 
+  /**
+   * If the select.name is state, then set the form state to the label of the event, otherwise if the
+   * select.name is department, then set the form department to the label of the event.
+   */
   const handleChange = (e) => {
     getInfoFromForm(e, dispatch, step);
-    select.name === "state" ? dispatch(setFormState(e.label)) : select.name === "department" ? dispatch(setFormDepartment(e.label)) : <></>;
+    select.name === "state" ? dispatch(setFormState(e.label)) : select.name === "department" && dispatch(setFormDepartment(e.label));
   }
 
   return (

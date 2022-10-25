@@ -34,6 +34,10 @@ const InputSearch = () => {
   const dispatch = useDispatch();
   const placeholder = 'Search an employee here';
 
+ /**
+  * When the input value is empty, set the filtered list to the original data, otherwise, filter the
+  * data based on the input value.
+  */
   const handleChange = (e) => {
     const inputValue = e.target.value;
     inputValue === "" ? dispatch(setFilteredList(data)) : dispatch(setFilteredList(data.filter((data) => filterEmployee(data, inputValue))));

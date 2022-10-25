@@ -1,3 +1,6 @@
+/**
+ * It removes all context menus and resets the background color of all cells to white.
+ */
 export const cancelMenu = () => {
   document.querySelectorAll('.context-menu').forEach((menu) => menu.remove());
   document.querySelectorAll('.ag-cell').forEach((cell) => cell.style.marginLeft = "0px")

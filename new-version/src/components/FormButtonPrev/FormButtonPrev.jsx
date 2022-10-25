@@ -7,6 +7,10 @@ const FormButtonPrev = () => {
   const dispatch = useDispatch();
   const step = useSelector((state) => state.formulary.step);
   const isDisabled = step === 1 ? " home_submit-btn disabled" : "home_submit-btn";
+  /**
+   * If the step is greater than 1, then set the step to the step minus 1, otherwise set the step to
+   * the step.
+   */
   const handlePrev = (e) => {
     e.preventDefault();
     step > 1 ? dispatch(setStep(step - 1)) : dispatch(setStep(step));

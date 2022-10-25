@@ -1,3 +1,4 @@
+/* Defining the columns that will be displayed in the table. */
 export const columns = [
   {
     field: "first-name",

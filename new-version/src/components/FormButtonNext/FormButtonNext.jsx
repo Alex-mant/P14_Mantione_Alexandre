@@ -7,6 +7,10 @@ const FormButtonNext = () => {
   const dispatch = useDispatch();
   const step = useSelector((state) => state.formulary.step);
 
+ /**
+  * If the step is less than 3, then dispatch the setStep function with the step plus 1, otherwise
+  * dispatch the setStep function with the step.
+  */
   const handleNext = (e) => {
     e.preventDefault();
     step < 3 ? dispatch(setStep(step + 1)) : dispatch(setStep(step));

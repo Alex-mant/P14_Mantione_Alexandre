@@ -345,6 +345,10 @@ const city = [
   "Youngstown",
 ];
 
+/**
+ * It returns an object with random values from the arrays above.
+ * @returns An object with the following properties:
+ */
 export const randomEmployee = () => {
   return {
     "first-name": firstName[Math.floor(Math.random() * (firstName.length - 0) + 0)],

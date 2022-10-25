@@ -19,6 +19,9 @@ const ButtonTool = styled.button`
 
 const AddMockedData = () => {
   const dispatch = useDispatch();
+  /**
+   * When the button is clicked, dispatch an action to add a mocked employee to the store.
+   */
   const handleClick = () => dispatch(addMockedEmployee(randomEmployee()));
 
   return (
