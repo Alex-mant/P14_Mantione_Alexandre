@@ -11,6 +11,10 @@ import TableTools from "../TableTools/TableTools";
 const colWidth = 150;
 const containerWidth = colWidth * 9;
 
+/**
+ * It renders a table with a context menu.
+ * @returns An object.
+ */
 const TablePlugin = () => {
  /* A memoized function that returns an object. */
   const defaultColDef = useMemo(

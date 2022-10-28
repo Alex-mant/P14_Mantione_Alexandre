@@ -4,6 +4,12 @@ import { addNewEmployee } from "../../redux/feature/formularySlice";
 import { setStep } from "../../redux/feature/formularySlice";
 import check from '../../assets/check.svg'
 
+/**
+ * When the form is submitted, the addNewEmployee action is dispatched, and the setStep action is
+ * dispatched with the value of 1.
+ * @returns A button with an onClick event handler that dispatches the addNewEmployee action and the
+ * setStep action.
+ */
 const FormButtonSubmit = () => {
   const dispatch = useDispatch();
 

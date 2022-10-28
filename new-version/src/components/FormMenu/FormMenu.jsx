@@ -5,6 +5,7 @@ import FormButtonPrev from "../FormButtonPrev/FormButtonPrev";
 import FormButtonSubmit from "../FormButtonSubmit/FormButtonSubmit";
 import FormProgressBar from "../ProgressBar/ProgressBar";
 
+/* set menu of formulary. */
 const FormMenu = () => {
   const step = useSelector((state) => state.formulary.step);
   return (

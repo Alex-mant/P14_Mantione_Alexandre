@@ -17,6 +17,10 @@ const ButtonTool = styled.button`
   cursor: pointer;
 `
 
+/**
+ * When the button is clicked, dispatch an action to add a mocked employee to the store
+ * @returns A React component.
+ */
 const AddMockedData = () => {
   const dispatch = useDispatch();
   /**

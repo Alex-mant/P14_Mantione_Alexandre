@@ -4,6 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setDateOfBirth, setPlaceHolderBirthDay, setPlaceHolderStartDate } from '../../redux/feature/formularySlice';
 import { setStartDate as setSDate } from '../../redux/feature/formularySlice';
 
+/**
+ * The DatePickerPlugin function is a React component that renders a date picker.
+ * @returns A DatePicker component with the following props:
+ * @param string - id : define element style
+ */
 
 const DatePickerPlugin = ({id}) => {
   const [startDate, setStartDate] = useState();

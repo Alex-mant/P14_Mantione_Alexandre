@@ -1,5 +1,10 @@
 import React, { useCallback } from "react";
 
+/**
+ * When the page size is changed, the pagination is re-edited.
+ * @returns a JSX element.
+ * @param any - gridRef
+ */
 const SetPageSize = ({ gridRef }) => {
 
   /* When the page size is changed, the pagination is re-edited. . */

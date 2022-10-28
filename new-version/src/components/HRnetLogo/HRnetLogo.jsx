@@ -20,6 +20,10 @@ const Container = styled.div`
   }
 }
 `;
+/**
+ * This function returns a Container component with an image and a title element inside of it.
+ * @returns A React component.
+ */
 const HRnetLogo = () => {
   return (
     <Container className="websiteIdentity">

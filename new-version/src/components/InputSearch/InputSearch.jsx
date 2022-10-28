@@ -29,6 +29,11 @@ const Container = styled.div`
   flex-direction: column;
 `
 
+/**
+ * When the input value is empty, set the filtered list to the original data, otherwise, filter the
+ * data based on the input value.
+ * @returns The InputSearch component is being returned.
+ */
 const InputSearch = () => {
   const data = useSelector((state) => state.formulary.List);
   const dispatch = useDispatch();

@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setStep } from "../../redux/feature/formularySlice";
 import arrowLeft from '../../assets/arrow-left.svg'
 
+/**
+ * It's a button that when clicked, it will go to the previous step of the form.
+ * @returns A button with an onClick event handler that will dispatch an action to the redux store.
+ */
 const FormButtonPrev = () => {
   const dispatch = useDispatch();
   const step = useSelector((state) => state.formulary.step);

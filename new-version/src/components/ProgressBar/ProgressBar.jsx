@@ -23,6 +23,7 @@ const ProgressBar = styled.div`
     border: 1px solid #000;
   }
 `
+/* a progress bar to observe the stages of the form. */
 const FormProgressBar = () => {
   const step = useSelector(state => state.formulary.step)
   return (

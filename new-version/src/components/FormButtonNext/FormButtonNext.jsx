@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setStep } from "../../redux/feature/formularySlice";
 import arrowRight from '../../assets/arrow-right.svg'
 
+/**
+ * It's a button that when clicked, it will go to the next step of the form.
+ * @returns A button with an onClick event handler that will dispatch an action to the redux store.
+ */
 const FormButtonNext = () => {
   const dispatch = useDispatch();
   const step = useSelector((state) => state.formulary.step);
@@ -16,6 +20,7 @@ const FormButtonNext = () => {
     step < 3 ? dispatch(setStep(step + 1)) : dispatch(setStep(step));
   };
 
+  
   return (
     <>
       <button aria-label="next step" type="button" onClick={handleNext} className="home_submit-btn">

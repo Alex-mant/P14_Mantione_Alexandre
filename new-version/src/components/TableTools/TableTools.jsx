@@ -9,6 +9,12 @@ const Container = styled.div`
   justify-content: space-between;
 `
 
+/**
+ * It's a TableTools component that contains three components: SetPageSize, AddMockedData,
+ * and InputSearch.
+ * @returns A React component.
+ * @param any - gridRef
+ */
 const TableTools = ({gridRef}) => {
   return (
     <Container>

@@ -4,6 +4,10 @@ import { getInfoFromForm } from "../../utils/getInfoFromForm";
 import DatePickerPlugin from "../DatePickerPlugin/DatePickerPlugin";
 import SelectPlugin from "../SelectPlugin/SelectPlugin";
 
+/** Return input or select referral depending on object.label value.
+* @returns input or select
+* @param Object - object
+*/
 const InputOrSelect = (object) => {
   const dispatch = useDispatch();
   const step = useSelector((state) => state.formulary.step);

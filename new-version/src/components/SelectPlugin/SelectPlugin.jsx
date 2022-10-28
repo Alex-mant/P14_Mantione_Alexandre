@@ -4,6 +4,11 @@ import Select from 'react-select';
 import { setFormDepartment, setFormState } from '../../redux/feature/formularySlice';
 import { getInfoFromForm } from '../../utils/getInfoFromForm';
 
+/**
+ * A Select component. 
+ * @returns JSX-Element
+ * @param object - object
+ */
 const SelectPlugin = ({object}) => {
   const dispatch = useDispatch();
   const select = object.select;
