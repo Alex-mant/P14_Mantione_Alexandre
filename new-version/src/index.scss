@@ -126,16 +126,16 @@ a.navLink {
           transform: scale(1.025);
         }
       }
+      .disabled{
+        background-color: grey;
+        &:hover{
+          transform: unset;
+          background-color: grey;
+        }
+      }
     }
     .arrow-Btn{
       margin-top: 2px;
-    }
-    .disabled{
-      background-color: grey;
-      &:hover{
-        transform: unset;
-        background-color: grey;
-      }
     }
     .form_title {
       text-align: center;
