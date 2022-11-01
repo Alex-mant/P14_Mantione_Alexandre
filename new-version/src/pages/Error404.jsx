@@ -29,7 +29,7 @@ const Error404 = () => {
     <PageContainer id='Error404'>
       <h2>Error 404</h2>
       <p>Oops 404 - this page doesn't exist or it has been removed</p>
-      <Link to='/home'>Back to homepage here !</Link>
+      <Link to='/'>Back to homepage here !</Link>
     </PageContainer>
   );
 }
