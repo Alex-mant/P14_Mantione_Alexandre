@@ -6,7 +6,7 @@ import back from "../assets/return.svg";
 const EmployeeList = () => {
   return (
     <div id="employeeList">
-      <Nav pathname={"/home"} img={back} text={"home"}/>
+      <Nav pathname={"/"} img={back} text={"home"}/>
       <TablePlugin />
     </div>
   );
